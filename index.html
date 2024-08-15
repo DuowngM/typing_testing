@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- ======== CHƠI GAME ======== -->
+    <div id="game-container">
+        <div class="container mt-5">
+
+            <!-- Đăng nhập + Chọn ngôn ngữ -->
+            <div id="btn-container" class="mb-3">
+                <button class="btn btn-login">Đăng nhập</button>
+                <select id="chose-language" class="btn">
+                    <option value="1">Vietnamese</option>
+                    <option value="2">English</option>
+                </select>
+            </div>
+
+            <!-- Nơi hiển thị từ để gõ -->
+            <div id="words">
+                <span class="correct">không</span>
+                <span class="correct">tượng</span>
+                <span class="wrong">nguyễn</span>
+                <span class="wrong">zing</span>
+                <span class="correct">lịch</span>
+                <span class="correct">chủ</span>
+                <span class="highlight">cũng</span>
+                <span>mệt</span>
+                <span>cái</span>
+                <span>an</span>
+                <span>về</span>
+                <span>thứ</span>
+                <span>thành</span>
+                <span>cộng</span>
+                <span>sa</span>
+                <span>anh</span>
+                <span>hài</span>
+                <span>qua</span>
+                <span>đến</span>
+                <span>nạn</span>
+                <span>mạng</span>
+                <span>hơn</span>
+                <span>an</span>
+            </div>
+
+            <!-- Gõ từ + Hiển thị thời gian + Reload -->
+            <div id="control">
+                <input type="text" id="input-word" autocomplete="off">
+                <p id="time">1:00</p>
+                <button class="btn btn-reload">
+                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <!-- Hiển thị kết quả của người chơi -->
+            <div id="info" class="mt-5 mb-5">
+                <div class="result">
+                    <p class="result-title">Kết quả</p>
+                    <div class="result-wps">
+                        <span class="wps-count">50 WPM</span>
+                        <span class="wps-mess">(từ mỗi phút)</span>
+                    </div>
+                    <div class="result-item">
+                        <div>Tổ hợp phím</div>
+                        <div class="character-count-box">
+                            <p>
+                                (
+                                <span class="character-correct-count text-success">252</span>
+                                |
+                                <span class="character-wrong-count text-danger">29</span>
+                                )
+                            </p>
+                            <p class="character-count">281</p>
+                        </div>
+                    </div>
+                    <div class="result-item">
+                        <div>Độ chính xác</div>
+                        <div class="percent-correct font-weight-bold">68.48%</div>
+                    </div>
+                    <div class="result-item">
+                        <div>Những từ đúng</div>
+                        <div class="text-success words-correct font-weight-bold">46</div>
+                    </div>
+                    <div class="result-item">
+                        <div>Những từ sai</div>
+                        <div class="text-danger words-wrong font-weight-bold">5</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bảng xếp hạng người chơi -->
+        <div class="container mb-5" id="ranking-container">
+            <h4 class="mb-3 text-uppercase">Bảng xếp hạng (top 10)</h4>
+            <table class="table bg-white">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Ảnh đại diện</th>
+                        <th scope="col">Tên đăng nhập</th>
+                        <th scope="col">WPM</th>
+                        <th scope="col">Thời gian</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1.</td>
+                        <td>
+                            <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHBlcnNvbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                alt="">
+                        </td>
+                        <td>Bùi Văn Hiên</td>
+                        <td class="font-weight-bold">151</td>
+                        <td class="font-italic">11:20:25 - 23/04/2021</td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td>
+                            <img src="https://images.unsplash.com/photo-1569124589354-615739ae007b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fHBlcnNvbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                alt="">
+                        </td>
+                        <td>Nguyễn Thu Hằng</td>
+                        <td class="font-weight-bold">148</td>
+                        <td class="font-italic">15:41:32 - 22/04/2021</td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td>
+                            <img src="https://images.unsplash.com/photo-1595399874399-10f2444c4eb2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTN8fHBlcnNvbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                alt="">
+                        </td>
+                        <td>Phạm Văn Minh</td>
+                        <td class="font-weight-bold">147</td>
+                        <td class="font-italic">19:11:54 - 23/04/2021</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>

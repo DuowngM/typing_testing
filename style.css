@@ -1,0 +1,243 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #add5ff;
+    overflow-x: hidden;
+
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.428571429;
+    color: #333;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container {
+    width: 1000px;
+}
+
+#chose-language option {
+    display: inline-block;
+    padding: 0.5rem 0;
+}
+
+.btn-login {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+    margin-right: 1rem;
+}
+
+.btn-chose-language {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+#words {
+    padding: 1rem;
+    background: #ffffff;
+    border: 1px solid #8eb6d8;
+}
+
+#words span {
+    display: inline-block;
+    font-size: 2.2em;
+    line-height: 1.6em;
+    padding: 3px 5px 3px 5px;
+}
+
+#words span.highlight {
+    background: #dddddd;
+    color: #000;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#words span.highlight-wrong {
+    background: red;
+    color: #000;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#words span.wrong {
+    color: red;
+}
+
+#words span.correct {
+    color: green;
+}
+
+#control {
+    padding: 1rem;
+    background: #a7c8e7;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#input-word {
+    height: 50px;
+    font-size: 2em;
+    line-height: 1em;
+    color: #333;
+
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+#input-word:focus {
+    outline: none;
+    border: 1px solid #000;
+}
+
+#time {
+    line-height: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 1.6em;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: white;
+    background: #3c4d5c;
+    margin: 0 1rem;
+    padding: 0 0.5rem;
+}
+
+.btn-reload {
+    height: 50px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 6px;
+
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+}
+/* ============ Result ============== */
+#info {
+    width: 300px;
+    background-color: #fff;
+}
+.result-title {
+    color: #fff;
+    background: #4d7f9f;
+    font-size: 16px;
+    padding: 8px 15px;
+    margin: 0px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #333333;
+    border-radius: 3px 3px 0px 0px;
+}
+
+.result-wps {
+    border-bottom: 1px solid #ccc;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+}
+
+.wps-count {
+    font-size: 46px;
+    color: #527a1e;
+    display: block;
+    text-align: center;
+    font-weight: 600;
+}
+
+.wps-mess {
+    color: #81888c;
+    font-size: 12px;
+    display: block;
+    text-align: center;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding: 1rem;
+}
+
+.character-count-box {
+    display: flex;
+}
+
+.character-count-box p {
+    margin-bottom: 0;
+}
+
+.character-count {
+    margin-left: 0.5rem;
+}
+
+/* ============ RANKING ============== */
+#ranking-container img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#ranking-container td {
+    line-height: 50px;
+}
+
+/* ============ LOGIN ============== */
+#login-container {
+    height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    display: none;
+}
+
+.btn-link-forgot-password,
+.btn-link-login {
+    display: block;
+    border: none;
+    background-color: transparent;
+    color: #428bca;
+    margin-top: 1.5rem;
+}
+
+/* ============ FORGOT ============== */
+#forgot-container {
+    height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    display: none;
+}
+
+#forgot-container h3 {
+    color: #F06102;
+    font-size: 18px;
+    line-height: 32px;
+    margin-top: 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 30px;
+}
